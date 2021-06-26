@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/Assets/CSS/styles.css" />
+</head>
+
+<body>
+    <div class="score"></div>
+    <div>Check the Scoreboard</div>
+
+    <div class="timer">Time: <span id="time">0</span></div>
+    <section>
+        <!-- maybe a id here too? -->
+        <div class="start-screen">
+            <h1>Coding Quiz</h1>
+            <p>
+                The challange:
+                <br>
+                Answer the following quesitons within the time limit. The faster you answer the higher your score. BUT
+                BE CAREFUl! Answering incorrectly will hurt your score and time.
+            </p>
+            <button id="start-button">Start Now</button>
+        </div>
+        <!-- maybe a id here too? hide?-->
+        <div id="questionArray" class="hide">
+            <h2 class="question-text"></h2>
+            <!-- maybe an id here? -->
+            <div class="possible-answers"></div>
+        </div>
+
+        <div id="end" class="hide">
+            <h2>Finished</h2>
+            <p>Your score is <span id="final-score"></span></p>
+            <br>
+            <p>Enter a name, no longer than seven characters, for the scoreboard: <input type="text" id="username"
+                    max="7">
+                <button id="enter">Enter</button>
+            </p>
+        </div>
+
+        <div id="finish" class="finish hid"></div>
+    </section>
+<script src="Assets/JS/questions.js"></script>
+<script src="Assets/JS/script.js"></script>
+</body>
+
+</html>
