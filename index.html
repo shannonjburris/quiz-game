@@ -6,18 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/Assets/CSS/styles.css" />
+    <link rel="stylesheet" href="./Assets/CSS/styles.css"/>
 </head>
 
 <body>
-    <div class="score"></div>
-    <div>Check the Scoreboard</div>
+    <div class="score">
+    <div>Check the Scoreboard</div></div>
 
-    <div class="timer">Time: <span id="time">0</span></div>
+    <div class="timer">Time: <span id="time">15 seconds remaining</span></div>
     <section>
-        <!-- maybe a id here too? -->
-        <div class="start-screen">
-            <h1>Coding Quiz</h1>
+        
+        <div class="start-screen" id="start-screen">
+            <h1>Speed Quiz</h1>
             <p>
                 The challange:
                 <br>
@@ -26,11 +26,11 @@
             </p>
             <button id="start-button">Start Now</button>
         </div>
-        <!-- maybe a id here too? hide?-->
+       
         <div id="questionArray" class="hide">
-            <h2 class="question-text"></h2>
-            <!-- maybe an id here? -->
-            <div class="possible-answers"></div>
+            <h2 class="question-text" id="question-text"></h2>
+           
+            <div class="possible-answers" id="possible-answers"></div>
         </div>
 
         <div id="end" class="hide">

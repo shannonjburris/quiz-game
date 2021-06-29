@@ -1,0 +1,39 @@
+
+.timer {
+    padding: 5px;
+    border: lightslategray solid 2px;
+    display: inline;
+    justify-content:right;
+    /*line-height: 40px;*/
+
+}
+
+.score {
+    text-align: right;
+}
+
+#possible-answers {
+    background-color: lightsalmon;
+}
+
+.hide {
+    display: none;
+}
+
+.start-screen {
+    text-align: center;
+}
+
+p {
+    line-height: 20px;
+}
+
+#start-button {
+    background-color: brown;
+    color: cornsilk;
+    font-weight: bold;
+    border-radius: 15px;
+    width: 120px;
+    height: 40px;
+    font-size: medium;
+}
