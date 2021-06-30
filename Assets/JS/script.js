@@ -5,13 +5,19 @@ var currentQuestion;
 var timeLeft;
 var startQuiz;
 
-var startButton = document.querySelector("#start-button");
-var questionsElement = document.querySelector("#questionArray");
-var timer = document.querySelector("#time");
-var choices = document.querySelector("#possible-answers");
-var StartScreen = document.querySelector("#start-screen");
-var EndScreen = document.querySelector("#end");
-var questionText = document.querySelector("#question-text");
+var startButton         = document.querySelector("#start-button");
+var questionsElement    = document.querySelector("#questionArray");
+var timer               = document.querySelector("#time");
+var choices             = document.querySelector("#possible-answers");
+var StartScreen         = document.querySelector("#start-screen");
+var EndScreen           = document.querySelector("#end");
+var questionText        = document.querySelector("#question-text");
+var form                = document.getElementById("form");
+
+//added for storage
+var count = localStorage.getItem("score");
+//update the page
+//counter.textContent = score;
 
 
 function startQuiz() {
@@ -27,15 +33,17 @@ function endQuiz() {
     questionsElement.setAttribute("class", "hide");
     EndScreen.removeAttribute("class", "hide");
     var finalScore = document.querySelector("#final-score");  
-    finalScore = timeLeft;
+    finalScore.textContent = timer.textContent;
 }
 
 
 function getQuestion() {
+    console.log(timeLeft);
     if (questions[currentQuestionIndex] === undefined) {
         endQuiz();
         return;
     }
+
     currentQuestion = questions[currentQuestionIndex];
     questionText.textContent = currentQuestion.text;
     choices.textContent = "";
@@ -59,7 +67,7 @@ function checkAnswer(event) {
         //
     }
     else {
-        console.log("no, stupid!!!");
+        console.log("nope");
         timeLeft = timeLeft - 3;
     }
     currentQuestionIndex++
@@ -75,20 +83,37 @@ function countdown() {
 
         if (timeLeft > 1) {
 
-            timer.textContent = timeLeft + ' seconds remaining';
+            timer.textContent = timeLeft;
 
-            timeLeft--;
-        } else if (timeLeft === 1) {
-
-            timer.textContent = timeLeft + ' second remaining';
             timeLeft--;
         } else {
 
             timer.textContent = '0';
-
+            //endQuiz();
             clearInterval(startQuiz);
 
         }
     }, 1000);
 }
+
+var existingScores = localStorage.getItem("highscores");
+var scoresArray = [];
+
+if (existingScores) {
+    existingScores = JSON.parse(existingScores);
+    for (let index = 0; index < existingScores.length; index++) {
+        scoresArray.push(existingScores[index]);
+    }
+}
+
+function formSubmit(event) { 
+    event.preventDefault(); 
+    scoresArray.push({ 'username': username.value, "score": timer.textContent })
+    localStorage.setItem("highscores", JSON.stringify(scoresArray)); 
+    location.href = "./scoreboard.html";
+} 
+
+form.addEventListener('submit', formSubmit);
+
+
 

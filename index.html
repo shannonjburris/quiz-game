@@ -5,17 +5,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./Assets/CSS/styles.css"/>
+    <title>Speed Quiz</title>
+    <link rel="stylesheet" href="./Assets/CSS/styles.css" />
+    <link rel="stylesheet" href="./Assets/CSS/styles.css" />
 </head>
 
 <body>
-    <div class="score">
-    <div>Check the Scoreboard</div></div>
+    <nav>
+        <div>
+           <a href="scoreboard.html" class="score" ><div>Check the Scoreboard</div></a> 
+        </div>
 
-    <div class="timer">Time: <span id="time">15 seconds remaining</span></div>
-    <section>
-        
+        <div class="timer">Time: <span id="time">15</span></div>
+    </nav>
+    <section class="wrapper">
+
         <div class="start-screen" id="start-screen">
             <h1>Speed Quiz</h1>
             <p>
@@ -26,10 +30,10 @@
             </p>
             <button id="start-button">Start Now</button>
         </div>
-       
+
         <div id="questionArray" class="hide">
             <h2 class="question-text" id="question-text"></h2>
-           
+
             <div class="possible-answers" id="possible-answers"></div>
         </div>
 
@@ -37,16 +41,18 @@
             <h2>Finished</h2>
             <p>Your score is <span id="final-score"></span></p>
             <br>
-            <p>Enter a name, no longer than seven characters, for the scoreboard: <input type="text" id="username"
-                    max="7">
+            <p>Enter a name, no longer than seven characters, for the scoreboard:
+            <form id="form">
+                <input type="text" id="username" max="7">
                 <button id="enter">Enter</button>
+            </form>
             </p>
         </div>
 
-        <div id="finish" class="finish hid"></div>
+        <div id="finish" class="finish hide"></div>
     </section>
-<script src="Assets/JS/questions.js"></script>
-<script src="Assets/JS/script.js"></script>
+    <script src="Assets/JS/questions.js"></script>
+    <script src="Assets/JS/script.js"></script>
 </body>
 
 </html>
