@@ -13,19 +13,18 @@ body {
     
 
 nav {
-    padding: 5px;
+    padding: 5px 10px;
     background-color: var(--brown);
-    font-weight: bold;
-    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;    
 }
 
 .timer {
     color: var(--blue);
     padding: 5px;
     display: inline;
-    justify-content:right;
-
-
+    letter-spacing: 1.1px;
 }
 
 .score {
@@ -33,6 +32,7 @@ nav {
     padding: 5px;
     text-align: right;
     text-decoration: none;
+    letter-spacing: 1.1px;
 }
 
 #possible-answers {
