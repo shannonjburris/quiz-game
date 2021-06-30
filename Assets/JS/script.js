@@ -16,8 +16,7 @@ var form                = document.getElementById("form");
 
 //added for storage
 var count = localStorage.getItem("score");
-//update the page
-//counter.textContent = score;
+
 
 
 function startQuiz() {
@@ -64,7 +63,7 @@ function checkAnswer(event) {
 
     if (event.target.value === currentQuestion.answer) {
         console.log("Correct!");
-        //
+        
     }
     else {
         console.log("nope");
